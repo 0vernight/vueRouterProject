@@ -5,6 +5,6 @@ import MyIndex from '../components/MyIndex.vue'
 
 <template>
   <main>
-    <MyIndex></MyIndex>
+    <MyIndex msg="my index"></MyIndex>
   </main>
 </template>

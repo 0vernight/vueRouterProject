@@ -1,7 +1,14 @@
 <script setup lang="ts">
+import { useRoute, useRouter } from 'vue-router';
+
 defineProps<{
   msg: string
 }>()
+
+window.onload = () => {
+    console.log("route="+useRoute.params );
+    console.log("route="+useRouter.name );
+}
 </script>
 
 <template>
