@@ -6,6 +6,9 @@ import EcosystemIcon from './icons/IconEcosystem.vue'
 import CommunityIcon from './icons/IconCommunity.vue'
 import SupportIcon from './icons/IconSupport.vue'
 import { useRoute, useRouter } from 'vue-router'
+import axios from 'axios'
+import { axiosInstance } from '../utils/axios'
+
 defineProps<{
     msg: string,
     // required: false,
@@ -25,13 +28,42 @@ window.onload = () => {
     // push
     // replace
     // redirec
+    console.log(window.localStorage);
+    console.log(window.sessionStorage);
+
 }
+
 const btn1click = () => {
     // alert("btn1 was clicked!")
     //向前走一步
     //userRouter.go(-1);
     alert("back word")
-    history.back();
+    //history.back();
+    // axios({
+    //     method: 'post',
+    //     url: 'http://10.25.145.25:8098/user/12345',
+    //     data: {
+    //         firstName: 'Fred',
+    //         lastName: 'Flintstone'
+    //     }
+    // }).then((result) => {
+    //     console.log(result)
+    // }).catch((err) => {
+    //     console.log(err)
+    // });
+    // 封装后的
+    axiosInstance({
+        method: 'post',
+        url: '/user/12345',
+        data: {
+            firstName: 'Fred',
+            lastName: 'Flintstone'
+        }
+    }).then((result) => {
+        console.log(result)
+    }).catch((err) => {
+        console.log(err)
+    });
 
 
 }
